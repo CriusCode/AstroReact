@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astrocon</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+    <div class="App">
+    <!-- <script>
+      Base JS pour le random de résultats aux questions
+      const getFortune = document.querySelector(".get-fortune-btn");
+      const crystalBall = document.querySelector(".crystal-ball");
+      const fortune = document.querySelector(".fortune");
+
+      const fortunes = [];
+      let i = 0;
+
+      fortunes[0] = "Réponse 1";
+      fortunes[1] = "Réponse 2";
+      fortunes[2] = "Réponse 3";
+      fortunes[3] = "Réponse 4";
+      fortunes[4] = "Réponse 5";
+      fortunes[5] = "Réponse 6";
+      fortunes[6] =
+        "Réponse 7";
+      fortunes[7] = "Réponse 8";
+      fortunes[8] = "Réponse 9";
+      fortunes[9] = "Réponse 10";
+
+      getFortune.addEventListener("click", () => {
+        if (
+          fortune.classList.contains("reveal") &&
+          crystalBall.classList.contains("flicker")
+        ) {
+          return;
+        }
+        if (fortune.classList.contains("reveal")) {
+          fortune.classList.remove("reveal");
+        }
+        let num = Math.floor(Math.random() * fortunes.length);
+        i = num;
+        console.log(i);
+        fortune.textContent = fortunes[i];
+        crystalBall.classList.add("flicker");
+        setTimeout(() => {
+          crystalBall.classList.remove("flicker");
+        }, 6000);
+        setTimeout(() => {
+          fortune.classList.add("reveal");
+        }, 5000);
+      }); -->
+    </script>
+  </body>
+</html>
