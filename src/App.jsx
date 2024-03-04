@@ -14,14 +14,14 @@ function App() {
   ]);
 
   function onRemoveBtnHandler(noteToDelete) {
-   const newNotes = notes.filter(note => note.id !== noteToDelete.id);
-   setNotes(newNotes);
+    const newNotes = notes.filter((note) => note.id !== noteToDelete.id);
+    setNotes(newNotes);
   }
 
   return (
     <>
       <h1>Application de divination</h1>
-      <Counter />
+      <Counter notes={notes} />
       <AddNoteForm />
       <Filters />
       <NoteList notes={notes} onRemoveBtn={onRemoveBtnHandler} />
