@@ -12,50 +12,37 @@
     <div class="stars"></div>
     <div class="twinkling"></div>
     <div class="clouds"></div>
-    <div class="App">
-    <!-- <script>
-      Base JS pour le random de résultats aux questions
-      const getFortune = document.querySelector(".get-fortune-btn");
-      const crystalBall = document.querySelector(".crystal-ball");
-      const fortune = document.querySelector(".fortune");
-
-      const fortunes = [];
-      let i = 0;
-
-      fortunes[0] = "Réponse 1";
-      fortunes[1] = "Réponse 2";
-      fortunes[2] = "Réponse 3";
-      fortunes[3] = "Réponse 4";
-      fortunes[4] = "Réponse 5";
-      fortunes[5] = "Réponse 6";
-      fortunes[6] =
-        "Réponse 7";
-      fortunes[7] = "Réponse 8";
-      fortunes[8] = "Réponse 9";
-      fortunes[9] = "Réponse 10";
-
-      getFortune.addEventListener("click", () => {
-        if (
-          fortune.classList.contains("reveal") &&
-          crystalBall.classList.contains("flicker")
-        ) {
-          return;
-        }
-        if (fortune.classList.contains("reveal")) {
-          fortune.classList.remove("reveal");
-        }
-        let num = Math.floor(Math.random() * fortunes.length);
-        i = num;
-        console.log(i);
-        fortune.textContent = fortunes[i];
-        crystalBall.classList.add("flicker");
-        setTimeout(() => {
-          crystalBall.classList.remove("flicker");
-        }, 6000);
-        setTimeout(() => {
-          fortune.classList.add("reveal");
-        }, 5000);
-      }); -->
-    </script>
+    <div class="App"></div>
+    <div class="container">
+      <div class="auth-buttons">
+        <button id="signup-btn" class="btn btn-primary p-3 mb-2 bg-primary text-white">S'inscrire</button>
+        <button id="login-btn" class="btn btn-outline-primary p-3 mb-2 bg-primary text-white">
+          Se connecter
+        </button>
+      </div>
+      <!-- <div id="signup-form" class="form hidden">
+        <h2>Inscription</h2>
+        <form action="/signup" method="post">
+          <label for="username">Nom d'utilisateur:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Mot de passe:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+      </div>
+      <div id="login-form" class="form hidden">
+        <h2>Connexion</h2>
+        <form action="/login" method="post">
+          <label for="username">Nom d'utilisateur:</label>
+          <input type="text" id="username-connection" name="username" required />
+          <label for="password">Mot de passe:</label>
+          <input type="password" id="password-connection" name="password" required />
+          <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script> -->
   </body>
 </html>
