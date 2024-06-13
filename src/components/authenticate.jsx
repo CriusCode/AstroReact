@@ -1,27 +1,25 @@
-import { NoteManager } from "../api/note-manager.js";
+import { NoteManager } from "../api/note-manager";
 
 export default function Authenticate({ onAuthenticatedChanged }) {
+
   async function onLoginFormSubmitHAndler(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
 
     const payload = {
-      username: formData.get("username"),
-      password: formData.get("password"),
+      username: formData.get('username'),
+      password: formData.get('password')
     };
-    const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/users/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/users/login`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
 
     if (response.status !== 200) {
-      window.alert("Authentification failed");
+      window.alert('Authentification non réussie');
       return;
     }
 
@@ -42,5 +40,5 @@ export default function Authenticate({ onAuthenticatedChanged }) {
         <button type="submit">Se connecter</button>
       </fieldset>
     </form>
-  );
+  )
 }

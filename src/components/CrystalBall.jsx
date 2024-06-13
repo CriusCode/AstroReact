@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function RandomAnswer() {
-  const [fortunes, setFortunes] = useState([
+function CrystalBall() {
+    /*
+  const fortunes = [
     "La réponse est dans le frigo, juste derrière le ketchup...",
     "Les étoiles me disent que c'est le bon moment pour une sieste...",
     "As-tu essayé de demander à Phénomène Raven si elle avait la réponse avant de me consulter ?",
@@ -12,64 +13,41 @@ export default function RandomAnswer() {
     "La solution à tous les problèmes : manger plus de chocolat !",
     "Les signes indiquent que tu devrais peut-être écouter du Céline Dion pour résoudre ce problème...",
     "La boule de cristal a un message important pour toi : 'Fais une pause et twerk un peu'",
-  ]);
+  ];
 
-  const [i, setI] = useState(0);
-  const [isRevealed, setIsRevealed] = useState(false);
+  const [fortune, setFortune] = useState("");
   const [isFlickering, setIsFlickering] = useState(false);
+  const [isRevealing, setIsRevealing] = useState(false);
 
   const getFortune = () => {
-    if (isRevealed && isFlickering) {
-      return;
-    }
-  
-    if (isRevealed) {
-      setIsRevealed(false);
-    }
-  
-    let num = Math.floor(Math.random() * fortunes.length);
-    setI(num);
-  
-    console.log("Selected Fortune Index:", num);
-    console.log("Current State of i:", i);
-  
+    if (isRevealing || isFlickering) return;
+
+    const randomIndex = Math.floor(Math.random() * fortunes.length);
+    setFortune(fortunes[randomIndex]);
     setIsFlickering(true);
-  
+
     setTimeout(() => {
       setIsFlickering(false);
-    }, 6000);
-  
-    setTimeout(() => {
-      setIsRevealed(true);
+      setIsRevealing(true);
     }, 5000);
   };
 
+  useEffect(() => {
+    if (isFlickering) {
+      setTimeout(() => setIsFlickering(false), 6000); // Arrête le scintillement après 6 secondes
+    }
+  }, [isFlickering]); // Exécute l'effet seulement si isFlickering change
   return (
-    <div>
-      <button className="get-fortune-btn" onClick={getFortune}>
-        Posez votre question...
-      </button>
-      <div className={`crystal-ball ${isFlickering ? "flicker" : ""}`}></div>
-      <div className={`fortune ${isRevealed ? "reveal" : ""}`}>
-        {isRevealed && (
-          <p>{fortunes[i]}</p>
-        )}
+    <div className="App">
+      <div className={`crystal-ball ${isFlickering ? "flicker" : ""}`}>
+        <p className={`fortune ${isRevealing ? "reveal" : ""}`}>{fortune}</p>
       </div>
+      <button className="get-fortune-btn" onClick={getFortune}>
+        Get Your Fortune
+      </button>
     </div>
   );
+  */
 }
 
-
-// Code pour le compteur
-// const [compteur, setCompteur] = useState(0);
-
-// const handleClick = () => {
-//   setCompteur(compteur + 1);
-// };
-
-// return (
-//   <>
-//     <h1>{compteur}</h1>
-//     <button onClick={handleClick}>+</button>
-//   </>
-// );
+export default CrystalBall;

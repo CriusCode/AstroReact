@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Authenticate from "./components/authenticate";
-import Notes from "./components/notes";
+import Authenticate from "./components/Authenticate";
+import Notes from "./components/Notes";
 
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -11,14 +11,14 @@ export default function App() {
   if (authenticated) {
     return (
       <>
-        <h1>Application Notes</h1>
-        <notes />
+        <h1>Découvre ici ton avenir...</h1>
+        <Notes />
       </>
     )
   } else {
     return (
       <>
-        <h1>Application Notes</h1>
+        <h1>Découvre ici ton avenir...</h1>
         <Authenticate onAuthenticatedChanged={onAuthenticatedChangedHandler} />
       </>
     )
