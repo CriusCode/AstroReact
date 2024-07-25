@@ -40,5 +40,5 @@ const NoteManager = {
     return await response.json();
   },
 };
-
+ 
 export { NoteManager };
